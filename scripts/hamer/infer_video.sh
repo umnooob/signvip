@@ -1,0 +1,14 @@
+# python infer_videos_dw.py --video_folder /deepo_data/signvipworkspace/datasets/RWTH-T/train_processed_videos --pose_folder /deepo_data/signvipworkspace/datasets/RWTH-TSK/train_processed_videos --out_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/train_processed_videos
+# python infer_videos_dw.py --video_folder /deepo_data/signvipworkspace/datasets/RWTH-T/dev_processed_videos --pose_folder /deepo_data/signvipworkspace/datasets/RWTH-TSK/dev_processed_videos --out_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/dev_processed_videos
+# python infer_videos_dw.py --video_folder /deepo_data/signvipworkspace/datasets/RWTH-T/test_processed_videos --pose_folder /deepo_data/signvipworkspace/datasets/RWTH-TSK/test_processed_videos --out_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/test_processed_videos
+
+python save_video.py --video_folder /deepo_data/signvipworkspace/datasets/RWTH-T/train_processed_videos --pose_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/train_processed_videos  --out_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/train_processed_videos2
+python save_video.py --video_folder /deepo_data/signvipworkspace/datasets/RWTH-T/dev_processed_videos --pose_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/dev_processed_videos  --out_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/dev_processed_videos2
+python save_video.py --video_folder /deepo_data/signvipworkspace/datasets/RWTH-T/test_processed_videos --pose_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/test_processed_videos  --out_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/test_processed_videos2
+
+
+python fix_video.py --video_folder /deepo_data/signvipworkspace/datasets/RWTH-T/train_processed_videos --pose_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/train_processed_videos --generated_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/train_processed_videos2 --out_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/train_processed_videos3
+
+python fix_video.py --video_folder /deepo_data/signvipworkspace/datasets/RWTH-T/dev_processed_videos --pose_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/dev_processed_videos --generated_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/dev_processed_videos2 --out_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/dev_processed_videos3
+
+python fix_video.py --video_folder /deepo_data/signvipworkspace/datasets/RWTH-T/test_processed_videos --pose_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/test_processed_videos --generated_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/test_processed_videos2 --out_folder /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx/test_processed_videos3

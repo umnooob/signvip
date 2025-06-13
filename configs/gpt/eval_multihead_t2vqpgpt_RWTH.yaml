@@ -1,0 +1,39 @@
+weight_dtype: "fp16"  # or "fp16"
+# 模型配置
+modules:
+  text_model: "sentence-transformers/clip-ViT-B-32-multilingual-v1"
+  ckpt: /deepo_data/signvip_v2/workspace/multihead_t2vqpgpt_RWTH/20250421-0434/model-40000/t2pgpt/model.bin
+  clip_dim: 512
+  embed_dim: 512
+  block_size: 501
+  num_layers: 8
+  head_layers: 1
+  n_head: 8
+  drop_out_rate: 0.1
+  fc_rate: 4
+  codebook_size: 625
+
+# 数据集配置
+dataset:
+  frame_size: [ 512, 512 ]
+  frame_scale: [ 1.0, 1.0 ]
+  frame_ratio: [ 0.9, 1.0 ]
+  sample_rate: 1
+  roots:
+    - "/deepo_data/signvipworkspace/datasets/RWTH"
+  sk_roots: 
+  hamer_roots:
+  pose_roots: 
+    - /deepo_data/signvipworkspace/datasets/RWTHCompressVQPose/20250105-0626-FSQ625
+  meta_paths:
+    - "/deepo_data/signvipworkspace/datasets/RWTH/test_processed_videos.json"
+
+# 评估配置
+eval:
+  batch_size: 128
+  num_workers: 4
+  max_pose_len: 400
+  pose_size: 64
+  output_dirs: 
+    - "/deepo_data/signvipworkspace/eval_results/20250105-0626-FSQ625-RWTH/test"
+
