@@ -1,4 +1,27 @@
-# Advanced Sign Language Video Generation with Compressed and Quantized Multi-Condition Tokenization
+<div align="center">
+<h1> Advanced Sign Language Video Generation with Compressed and Quantized Multi-Condition Tokenization </h1>
+
+<p align="center">
+  <a href="https://tenvence.github.io/" target="_blank">Cong Wang</a><sup>1*</sup>, 
+  Zexuan Deng<sup>1*</sup>, 
+  <a href="https://zhiweinju.github.io/" target="_blank">Zhiwei Jiang</a><sup>1†</sup>, 
+  <a href="https://muzishen.github.io/" target="_blank">Fei Shen</a><sup>2</sup>, 
+  <a href="https://yafengnju.github.io/" target="_blank">Yafeng Yin</a><sup>1</sup>, 
+  Shiwei Gan<sup>1</sup>, 
+  <a href="https://zifengcheng.github.io/" target="_blank">Zifeng Cheng</a><sup>1</sup>, 
+  <a href="https://shipingge.github.io/" target="_blank">Shiping Ge</a><sup>1</sup>, 
+  <a href="https://isetnju.github.io/guq/index.html" target="_blank">Qing Gu</a><sup>1</sup>
+<br>
+<sup>1</sup> Nanjing University,
+<sup>2</sup> National University of Singapore
+<br>
+<sup>*</sup> Equal contribution.
+<sup>†</sup> Corresponding authors.
+<br><br>
+[<a href="https://arxiv.org/abs/XXXX.XXXX" target="_blank">arXiv</a>]
+<br>
+</div>
+<!-- # Advanced Sign Language Video Generation with Compressed and Quantized Multi-Condition Tokenization -->
 
 ## Video Showcase Gallery
 
@@ -161,3 +184,15 @@ Located in `scripts/how2sign/`:
 #### Other Dataset Scripts
 - `scripts/hamer/`: Scripts for processing HAMER dataset
 - `scripts/sk/`: Scripts for processing SK(DWPose) dataset
+
+## Citation
+
+If you find SignViP useful for your research and applications, please cite using this BibTeX:
+```
+@article{wang2025advanced,
+  title={Advanced Sign Language Video Generation with Compressed and Quantized Multi-Condition Tokenization},
+  author={Wang, Cong and Deng, Zexuan and Jiang, Zhiwei and Shen, Fei and Yafeng, Yin and Shiwei, Gan and Zifeng, Cheng and Shiping, Ge and Qing, Gu},
+  booktitle={arXiv preprint arXiv:XXXX.XXXXX},
+  year={XXXX}
+}
+```
