@@ -18,7 +18,7 @@
 <sup>*</sup> Equal contribution.
 <sup>†</sup> Corresponding authors.
 <br><br>
-[<a href="https://arxiv.org/abs/XXXX.XXXX" target="_blank">arXiv</a>]
+[<a href="https://arxiv.org/abs/2506.15980" target="_blank">arXiv</a>]
 <br>
 </div>
 <!-- # Advanced Sign Language Video Generation with Compressed and Quantized Multi-Condition Tokenization -->
@@ -192,7 +192,7 @@ If you find SignViP useful for your research and applications, please cite using
 @article{wang2025advanced,
   title={Advanced Sign Language Video Generation with Compressed and Quantized Multi-Condition Tokenization},
   author={Wang, Cong and Deng, Zexuan and Jiang, Zhiwei and Shen, Fei and Yafeng, Yin and Shiwei, Gan and Zifeng, Cheng and Shiping, Ge and Qing, Gu},
-  booktitle={arXiv preprint arXiv:XXXX.XXXXX},
-  year={XXXX}
+  booktitle={arXiv preprint arXiv:2506.15980},
+  year={2025}
 }
 ```
