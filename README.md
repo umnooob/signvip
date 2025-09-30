@@ -26,20 +26,6 @@
 
 ---
 
-## 📑 Table of Contents
-- [Project Structure](#project-structure)
-- [Training Stages](#training-stages)
-- [Setup and Installation](#setup-and-installation)
-- [Model Checkpoint](#model-checkpoint)
-- [Training](#training)
-- [Data Processing](#data-processing)
-- [Evaluation](#evaluation)
-- [Video Showcase Gallery](#video-showcase-gallery)
-- [Scripts Usage](#scripts-usage)
-- [Citation](#citation)
-
----
-
 ## 📂 Project Structure
 ```bash
 .
