@@ -4,19 +4,18 @@ stage_init: True
 distill_loss_weight: 1
 
 modules:
-  vae: /deepo_data/signvipworkspace/models/sd-vae-ft-mse
-  unet_2d: /deepo_data/signvipworkspace/models/stable-diffusion-v1-5/unet/
-  text_encoder: /deepo_data/signvipworkspace/models/stable-diffusion-v1-5/text_encoder/
-  tokenizer: /deepo_data/signvipworkspace/models/stable-diffusion-v1-5/tokenizer/
-  scheduler: /deepo_data/signvipworkspace/models/stable-diffusion-v1-5/scheduler/
-  apperance_encoder: /deepo_data/signvip/workspace/stage_1_multicond_RWTH/20250205-0513/best/appearance_encoder
-  condition_encoder: /deepo_data/signvip/workspace/stage_1_multicond_RWTH/20250205-0513/best/condition_encoder/model.bin
-  condition_encoder_motion: /deepo_data/signvip/workspace/stage_2_RWTH/20250304-0626-compress/best/condition_encoder/model.bin
+  vae: ./pretrain_models/sd-vae-ft-mse
+  unet_2d: ./pretrain_models/stable-diffusion-v1-5/unet/
+  text_encoder: ./pretrain_models/stable-diffusion-v1-5/text_encoder/
+  tokenizer: ./pretrain_models/stable-diffusion-v1-5/tokenizer/
+  scheduler: ./pretrain_models/stable-diffusion-v1-5/scheduler/
+  apperance_encoder: ./workspace/stage_1_multicond_RWTH/xx/best/appearance_encoder
+  condition_encoder: ./workspace/stage_1_multicond_RWTH/xx/best/condition_encoder/model.bin
+  condition_encoder_motion: ./workspace/stage_2_RWTH/xx/best/condition_encoder/model.bin
   vq_model: 
-  mm: /deepo_data/signvip/workspace/stage_2_RWTH/20250304-0626-compress/best/unet/model.bin
+  mm: ./workspace/stage_2_RWTH/xx/best/unet/model.bin
   unet: 
   condition_encoder_kwargs:
-    mid_channels: 4
     use_vq: true
     vq_kwargs:
       n_e: 625
@@ -65,12 +64,12 @@ trainable_modules:
 gradient_checkpointing: False
 
 solver:
-  max_train_steps: 50000
+  max_train_steps: 30000
   gradient_accumulation_steps: 1
   max_grad_norm: 1.0
   optimizer:
     use_8bit_adam: True
-    learning_rate: 5e-5
+    learning_rate: 1e-4
     adam_beta1: 0.9
     adam_beta2: 0.999
     adam_weight_decay: 1.0e-6
@@ -92,8 +91,8 @@ dataset:
     - "/deepo_data/signvipworkspace/datasets/RWTH-TSmplerx"
   meta_paths:
     - "/deepo_data/signvipworkspace/datasets/RWTH-T/train_processed_videos.json"
-  sample_rate: 1
-  num_frames: 1
+  sample_rate: 2
+  num_frames: 4
   ref_margin: 1
   uncond_ratio: 1
   mask_ratio: 0
@@ -104,14 +103,14 @@ dataset:
   both_mask_ratio: 0
 
 dataloader:
-  batch_size: 16
+  batch_size: 32
   num_workers: 4
 
 noise_scheduler_kwargs:
   num_train_timesteps: 1000
   beta_start: 0.00085
   beta_end: 0.012
-  beta_schedule: "linear"
+  beta_schedule: "scaled_linear"
   steps_offset: 1
   clip_sample: false
 

@@ -25,18 +25,17 @@ from diffusers import (
     UNetMotionModel,
 )
 from einops import rearrange
+from models.appearance_encoder import AppearanceEncoderModel
+from models.condition_encoder import VQConditionEncoder
+from models.unet import UNet3DConditionModel
 
 # from fastdtw import fastdtw
 from omegaconf import OmegaConf
 from PIL import Image
+from pipelines.pipeline_multicond import SignViPPipeline
 from scipy.spatial.distance import cdist
 from tqdm import tqdm
 from transformers import CLIPTextModel, CLIPTokenizer
-
-from models.appearance_encoder import AppearanceEncoderModel
-from models.condition_encoder import VQConditionEncoder
-from models.unet import UNet3DConditionModel
-from pipelines.pipeline_multicond import SignViPPipeline
 from utils import save_video, seed_everything
 
 warnings.filterwarnings("ignore")
@@ -162,7 +161,7 @@ def infer_one_video(cfg, args, pipeline, condition_encoder, ref_frame, tgt_frame
         num_inference_steps=args.num_inference_steps,
         guidance_scale=args.guidance_scale,
         context_batch_size=1,
-        context_frames=16,
+        context_frames=24,
     )
     return video_tensor
 

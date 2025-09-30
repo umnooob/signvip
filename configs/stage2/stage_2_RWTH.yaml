@@ -3,16 +3,15 @@ weight_dtype: fp16
 stage_init: true
 pose_aug_rate: 0.001
 modules:
-  vae: /deepo_data/signvipworkspace/models/sd-vae-ft-mse
-  unet_2d: /deepo_data/signvipworkspace/models/stable-diffusion-v1-5/unet/
-  text_encoder: /deepo_data/signvipworkspace/models/stable-diffusion-v1-5/text_encoder/
-  tokenizer: /deepo_data/signvipworkspace/models/stable-diffusion-v1-5/tokenizer/
-  scheduler: /deepo_data/signvipworkspace/models/stable-diffusion-v1-5/scheduler/
-  apperance_encoder: /deepo_data/signvip/workspace/stage_1_multicond_RWTH/20250205-0513/best/appearance_encoder
-  condition_encoder: /deepo_data/signvip/workspace/stage_1_multicond_RWTH/20250205-0513/best/condition_encoder/model.bin
-  mm: /deepo_data/signvipworkspace/models/mm_sd_v15_v2.ckpt
+  vae: ./pretrain_models/sd-vae-ft-mse
+  unet_2d: ./pretrain_models/stable-diffusion-v1-5/unet/
+  text_encoder: ./pretrain_models/stable-diffusion-v1-5/text_encoder/
+  tokenizer: ./pretrain_models/stable-diffusion-v1-5/tokenizer/
+  scheduler: ./pretrain_models/stable-diffusion-v1-5/scheduler/
+  apperance_encoder: ./workspace/stage_1_multicond_RWTH/xx/best/appearance_encoder
+  condition_encoder: ./workspace/stage_1_multicond_RWTH/xx/best/condition_encoder/model.bin
+  mm: ./pretrain_models/mm_sd_v15_v2.ckpt
   unet: 
-  mid_channels: 8
   unet_additional_kwargs:
     use_motion_module: true
     motion_module_resolutions:
@@ -41,12 +40,10 @@ grad:
   condition_encoder: false
 trainable_modules:
 - motion_modules.
-- compress_layer.
-- decompress_layer.
 
 gradient_checkpointing: false
 solver:
-  max_train_steps: 50000
+  max_train_steps: 20000
   gradient_accumulation_steps: 1
   max_grad_norm: 1.0
   optimizer:
@@ -77,8 +74,8 @@ dataset:
   - /deepo_data/signvipworkspace/datasets/RWTH-TSmplerx
   meta_paths:
   - /deepo_data/signvipworkspace/datasets/RWTH-T/train_processed_videos.json
-  sample_rate: 1
-  num_frames: 16
+  sample_rate: 2
+  num_frames: 24
   ref_margin: 5
   uncond_ratio: 1
   mask_ratio: 0
@@ -89,13 +86,13 @@ dataset:
   both_mask_ratio: 0
 
 dataloader:
-  batch_size: 2
+  batch_size: 3
   num_workers: 4
 noise_scheduler_kwargs:
   num_train_timesteps: 1000
   beta_start: 0.00085
   beta_end: 0.012
-  beta_schedule: linear
+  beta_schedule: scaled_linear
   steps_offset: 1
   clip_sample: false
 resume_from_checkpoint: 
@@ -105,7 +102,7 @@ max_ckpt: 1
 max_model: 1
 noise_offset: 0
 clip_skip: 1
-snr_gamma: 5.0
+snr_gamma: 0
 max_visible_frames: 6
 validation_data:
   meta_paths:

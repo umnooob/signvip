@@ -3,12 +3,12 @@ weight_dtype: fp16
 stage_init: True
 
 modules:
-  vae: "/deepo_data/signvipworkspace/models/sd-vae-ft-mse"
-  unet_2d: /deepo_data/signvipworkspace/models/stable-diffusion-v1-5/unet
-  scheduler: "/deepo_data/signvipworkspace/models/stable-diffusion-v1-5/scheduler/"
-  apperance_encoder: /deepo_data/signvipworkspace/models/stable-diffusion-v1-5/unet
+  vae: "./pretrain_models/sd-vae-ft-mse"
+  unet_2d: ./pretrain_models/stable-diffusion-v1-5/unet
+  scheduler: "./pretrain_models/stable-diffusion-v1-5/scheduler/"
+  apperance_encoder: ./pretrain_models/stable-diffusion-v1-5/unet
   condition_encoder: 
-  empty_text_emb: "/deepo_data/signvipworkspace/models/empty_text_emb.pt"
+  empty_text_emb: "./pretrain_models/empty_text_emb.pt"
   unet:
   unet_additional_kwargs:
     unet_use_cross_frame_attention: false
@@ -58,12 +58,12 @@ dataset:
   mask_ratio: 0
   mask_thershold: 0.85
   skip_ratio: 0
-  sk_mask_ratio: 0
-  hamer_mask_ratio: 0
+  sk_mask_ratio: 0.1
+  hamer_mask_ratio: 0.1
   both_mask_ratio: 0
 
 dataloader:
-  batch_size: 16
+  batch_size: 32
   num_workers: 8
 
 noise_scheduler_kwargs:
@@ -83,7 +83,7 @@ max_model: 1
 enable_zero_snr: False
 noise_offset: 0
 clip_skip: 1
-snr_gamma: 5.0
+snr_gamma: 0
 
 max_visible_frames: 6
 max_sin_pe_len: 1000

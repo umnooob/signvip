@@ -1,7 +1,7 @@
 seed: 42
 weight_dtype: bf16
 stage_init: True
-max_pose_len: 500
+max_pose_len: 400
 codebook_size: 625
 pose_size: 64
 p_keep: 0.6
@@ -11,11 +11,11 @@ modules:
   ckpt: 
   embed_dim: 512
   clip_dim: 512
-  block_size: 501
+  block_size: 401
   num_layers: 8
   head_layers: 1
   n_head: 8
-  drop_out_rate: 0.1
+  drop_out_rate: 0
   fc_rate: 4
   codebook_size: 625
   attn_type: "local:128"
@@ -43,13 +43,13 @@ dataset:
   frame_scale: [ 1.0, 1.0 ]
   frame_ratio: [ 0.9, 1.0 ]
   roots:
-    - "/deepo_data/signvipworkspace/datasets/How2Sign"
+    - "/deepo_data/signvipworkspace/datasets/RWTH-T"
   sk_roots: 
   hamer_roots:
   pose_roots: 
-    - /deepo_data/signvipworkspace/datasets/RWTHCompressVQPose/20250105-0626-FSQ625
+    - /RWTHCompressVQPose
   meta_paths:
-    - "/deepo_data/signvipworkspace/datasets/RWTH-T/train_processed_videos.json"
+    - "/datasets/RWTH-T/train_processed_videos.json"
   sample_rate: 1
   num_frames: 1
   ref_margin: 5
@@ -59,7 +59,7 @@ dataset:
   skip_ratio: 0
 
 dataloader:
-  batch_size: 16
+  batch_size: 32
   num_workers: 4
 
 noise_scheduler_kwargs:
@@ -85,4 +85,4 @@ max_sin_pe_len: 1000
 
 validation_data:
   meta_paths:
-    - "/deepo_data/signvipworkspace/datasets/RWTH-T/dev_processed_videos.json"
+    - "/datasets/RWTH-T/dev_processed_videos.json"

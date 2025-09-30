@@ -15,18 +15,17 @@ import torch
 from accelerate.logging import get_logger
 from diffusers import AutoencoderKL, DDIMScheduler
 from einops import rearrange
+from models.appearance_encoder import AppearanceEncoderModel
+from models.condition_encoder import VQConditionEncoder
+from models.unet import UNet3DConditionModel
 
 # from fastdtw import fastdtw
 from omegaconf import OmegaConf
 from PIL import Image
-from torch.utils.data import DataLoader
-from tqdm import tqdm
-
-from models.appearance_encoder import AppearanceEncoderModel
-from models.condition_encoder import VQConditionEncoder
-from models.unet import UNet3DConditionModel
 from pipelines.pipeline_multicond import SignViPPipeline
 from signdatasets import SignCondDataset
+from torch.utils.data import DataLoader
+from tqdm import tqdm
 from utils import save_video, seed_everything
 
 warnings.filterwarnings("ignore")
@@ -178,7 +177,7 @@ def infer_one_video(cfg, args, pipeline, ref_frame, tgt_sk_frames, tgt_hamer_fra
         video_length=f,
         num_inference_steps=cfg.validation_data.num_inference_steps,
         guidance_scale=args.guidance_scale,
-        context_frames=16,
+        context_frames=24,
     )
     return video_tensor
 
