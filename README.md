@@ -6,11 +6,11 @@
   <a href="https://tenvence.github.io/">Cong Wang</a><sup>1*</sup>, 
   Zexuan Deng<sup>1*</sup>, 
   <a href="https://zhiweinju.github.io/">Zhiwei Jiang</a><sup>1†</sup>, 
+  <a href="https://yafengnju.github.io/">Yafeng Yin</a><sup>1†</sup>, 
   <a href="https://muzishen.github.io/">Fei Shen</a><sup>2</sup>, 
-  <a href="https://yafengnju.github.io/">Yafeng Yin</a><sup>1</sup>, 
-  Shiwei Gan<sup>1</sup>, 
   <a href="https://zifengcheng.github.io/">Zifeng Cheng</a><sup>1</sup>, 
   <a href="https://shipingge.github.io/">Shiping Ge</a><sup>1</sup>, 
+  Shiwei Gan<sup>1</sup>, 
   <a href="https://isetnju.github.io/guq/index.html">Qing Gu</a><sup>1</sup>
 </p>
 
@@ -18,6 +18,12 @@
   <sup>1</sup> Nanjing University, 
   <sup>2</sup> National University of Singapore <br>
   <sup>*</sup> Equal contribution &nbsp; | &nbsp; <sup>†</sup> Corresponding authors
+</p>
+
+<p align="center">
+  
+  **NeurIPS 2025 (Spotlight)**
+
 </p>
 
 [![arXiv](https://img.shields.io/badge/arXiv-2506.15980-b31b1b.svg)](https://arxiv.org/abs/2506.15980)
